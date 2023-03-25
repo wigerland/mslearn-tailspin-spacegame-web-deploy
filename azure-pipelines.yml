@@ -65,33 +65,4 @@ stages:
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
 
-- stage: 'Deploy'
-  displayName: 'Deploy the web application'
-  dependsOn: Build
-  jobs:
-  - deployment: Deploy
-    pool:
-      vmImage: 'ubuntu-20.04'
-    environment: dev
-    variables:
-    - group: Release
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - download: current
-            artifact: drop
-          - task: IISWebAppManagementOnMachineGroup@0
-            displayName: 'IIS 1'
-            inputs:
-              IISDeploymentType: 'IISWebsite'
-              ActionIISWebsite: 'CreateOrUpdateWebsite'
-              WebsiteName: 'Dev3'
-              WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot\Dev3'
-              WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
-              CreateOrUpdateAppPoolForWebsite: true
-              AppPoolNameForWebsite: 'Dev3'
-              DotNetVersionForWebsite: 'No Managed Code'
-              PipeLineModeForWebsite: 'Integrated'
-              AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
     
