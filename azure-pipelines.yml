@@ -94,6 +94,7 @@ stages:
     DotNetVersionForWebsite: 'No Managed Code'
     PipeLineModeForWebsite: 'Integrated'
     AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
+    
     - task: IISWebAppDeploymentOnMachineGroup@0
       inputs:
         WebSiteName: 'Dev3'
