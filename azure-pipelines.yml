@@ -83,15 +83,15 @@ stages:
             artifact: drop
           - task: IISWebAppManagementOnMachineGroup@0
             displayName: 'IIS 1'
-              inputs:
-                IISDeploymentType: 'IISWebsite'
-                ActionIISWebsite: 'CreateOrUpdateWebsite'
-                WebsiteName: 'Dev3'
-                WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot\Dev3'
-                WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
-                CreateOrUpdateAppPoolForWebsite: true
-                AppPoolNameForWebsite: 'Dev3'
-                DotNetVersionForWebsite: 'No Managed Code'
-                PipeLineModeForWebsite: 'Integrated'
-                AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
+            inputs:
+              IISDeploymentType: 'IISWebsite'
+              ActionIISWebsite: 'CreateOrUpdateWebsite'
+              WebsiteName: 'Dev3'
+              WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot\Dev3'
+              WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+              CreateOrUpdateAppPoolForWebsite: true
+              AppPoolNameForWebsite: 'Dev3'
+              DotNetVersionForWebsite: 'No Managed Code'
+              PipeLineModeForWebsite: 'Integrated'
+              AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
     
