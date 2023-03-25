@@ -95,7 +95,3 @@ stages:
     PipeLineModeForWebsite: 'Integrated'
     AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
     
-    - task: IISWebAppDeploymentOnMachineGroup@0
-      inputs:
-        WebSiteName: 'Dev3'
-        Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
